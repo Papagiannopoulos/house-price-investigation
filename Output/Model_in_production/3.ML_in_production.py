@@ -81,10 +81,6 @@ data.BsmtCond = data.BsmtCond.map(quality)
 data.GarageCond = data.GarageCond.map(quality)
 data.HeatingQC = data.HeatingQC.map(quality)
 
-# Keep selected features from revious selection
-#for col in data.select_dtypes(include='O').columns:
-#    data[col] = data[col].astype('category')
-
 # Selected features
 output = pd.DataFrame(data['Id']) # Keep ID
 #data = data[selected_features]
