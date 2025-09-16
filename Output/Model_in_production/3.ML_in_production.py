@@ -60,7 +60,7 @@ data.Electrical.fillna(data.Electrical.mode().values[0], inplace = True)
 data['BuildingAge'] = data.YearBuilt.max(skipna=True) - data.YearBuilt + 1
 data['Remodeling'] = (data['YearBuilt'] != data['YearRemodAdd'])
 # Garage Age
-data['GarageYrBlt'] = data.GarageYrBlt.max(skipna=True) - data.GarageYrBlt + 1
+data['GarageAge'] = data.GarageYrBlt.max(skipna=True) - data.GarageYrBlt + 1
 
 # Engineering
 # Binary cols
