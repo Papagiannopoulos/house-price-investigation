@@ -93,5 +93,5 @@ data = data[selected_features]
 output['SalePrice'] = xgb.predict(data)
 
 # Save the output
-output.to_csv(f'Sales_list/{pd.Timestamp.now().date()}.csv', index=False)
+output.to_csv(f'{pd.Timestamp.now().date()}.csv', index=False)
 print(output.head(10))
