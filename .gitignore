@@ -16,3 +16,7 @@ wheels/
 # Text files
 *.csv
 *.txt
+
+# Other
+*.xlsx
+*.joblib
