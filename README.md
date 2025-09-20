@@ -1,4 +1,4 @@
-# 🦠 **House Price Investigation**  
+# 🏡 **House Price Investigation**  
 #### 🎯 ***Aim***: Predict the sales price of residential homes in Ames, Iowa
 
 ## Project Summary  
@@ -12,8 +12,8 @@ It is the second most popular competion on Kaggle. Submission file scores at 5% 
 1. 🔍 **[ Dataset](#-dataset)** - Data source
 2. 🧹 **[ Data Cleaning & Engineering](#-data-cleaning-&-engineering)** - Outliers, missing values handling
 3. 📊 **[ Feature Selection](#-feature-selection)** - Univariate approaches, correlation elimination, feature importances
-4. 👥 **[ Hyperparameter Tuning](#-hyperparameter-tuning)** - Bayesian optimization methods
-5. 🧩 **[ Model Development](#-model-development-analysis)** - Extreme Gradient Boosting
+4. 🧩 **[ Hyperparameter Tuning](#-hyperparameter-tuning)** - Bayesian optimization methods
+5. ⚙️ **[ Model Development](#-model-development-analysis)** - Extreme Gradient Boosting
 6. 🛒 **[ Model Production](#-model-production)** - joblib files for production
 7. 🚀 **[ Future Enhancements](#-future-enhancements)** - Next steps and improvements
 8. 🔁 **[ Reproducibility](#-reproducibility)** - Install dependencies
@@ -44,12 +44,12 @@ In such cases, the feature with the higher RMSE in the univariate analysis was r
 - **Multivariate ranking**: A tuned XGBoost model with regularization was trained on the remaining features to assess their importance.  
 Features with zero importance were excluded from the final set.  
 
-## 👥 Hyperparameter TuningTwo complementary approaches were performed:
+## 🧩 Hyperparameter TuningTwo complementary approaches were performed:
 Hyperparameter tuning was performed using **Bayesian optimization** with the **Tree-structured Parzen Estimator (TPE)**, implemented via the treeparzen module.  
 Unlike traditional grid/random search, Bayesian optimization constructs a probabilistic surrogate model of the loss function, which it uses to intelligently select the most promising hyperparameter configurations.  
 TPE, in particular, models the distribution of “good” versus “bad” hyperparameter configurations and chooses new candidates that maximize the expected improvement based on the given hyperparameter ranges.  
 
-## 🧩 Model Development
+## ⚙️ Model Development
 Spliting the data into train, test (20%) adn valid (15%), an XGBmodel tuned trained under multiple trials of subjective selections between final features.
 Finally, a model with 45 features were selected for production.  
 
@@ -59,11 +59,14 @@ Finally, a model with 45 features were selected for production.
 - The model_in_production.py script implements the prediction procedure, generating an output file containing the ID and the predicted value, with a timestamped filename.
 
 ## 🚀 Future Enhancements
-
+- Temporla features could highly improve model performance, reducing seasonal variance.
+- Monitoring & Model Maintenance for model drift detection to monitor performance over time as market trends change.
+- Schedule periodic retraining using the latest data to maintain model accuracy.
+- Integration with Web/BI Tools for real-time scoring API to allow users to input house features and receive predictions instantly.
 
 ## 🔁 Reproducibility
 #### 1. Clone repo and cd
-git clone https://github.com/Papagiannopoulos/who-covid19-globe-dashboard.git   
+git clone https://github.com/Papagiannopoulos/house-price-investigation  
 cd 'ecommerce-business-analytics'
 
 #### 2. Create a fresh virtual [env](https://github.com/astral-sh/uv)
